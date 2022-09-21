@@ -8,12 +8,10 @@ class UiScreen extends StatefulWidget {
 }
 
 class _UiScreenState extends State<UiScreen> {
+
   int Pcount = 0;
-
-  int Tcount = 0;
-
   int Wtime() {
-    if (Pcount > 0) return (3 * (Pcount + Tcount - 1) / Tcount).round();
+    if (Pcount > 0 && teller()>0) return (3 * (Pcount + teller() - 1) / teller()).round();
     return 0;
   }
 
@@ -62,9 +60,9 @@ class _UiScreenState extends State<UiScreen> {
               children: [
                 Expanded(
                   child: GestureDetector(
-                    onTap: (){
+                    onTap: () {
+                      Pcount++;
                       setState(() {
-                          Pcount++;
                       });
                     },
                     child: Container(
@@ -84,7 +82,12 @@ class _UiScreenState extends State<UiScreen> {
                 ),
                 Expanded(
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      if(Pcount>0){
+                        Pcount--;
+                      }
+                      setState(() {});
+                    },
                     child: Container(
                         width: 150.0,
                         height: 150.0,
