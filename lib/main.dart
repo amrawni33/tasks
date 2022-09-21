@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tasks/modules/ui_screen_chosen/ui_screen1.dart';
 
 import 'modules/age_calculator/age_calculator_app.dart';
 
@@ -12,8 +13,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: AgeCalculator(),
+    return  MaterialApp(
+      home: UiScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
